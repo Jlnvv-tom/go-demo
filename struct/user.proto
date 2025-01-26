@@ -1,0 +1,71 @@
+// 声明 proto 使用的语法版本
+syntax = "proto3";
+
+// proto 包名
+package user;
+
+// golang 包名
+option go_package = "../user";
+
+// 结构体
+// UserInfo 消息定义指 
+message UserInfo {
+  int32 id = 1;
+  string name = 2;
+  string phone = 3;
+}
+
+message CreateUserReq {
+  string title = 1; //title
+  string phone = 2; //phone
+}
+
+message CreateUserResp {
+ int32 id = 1;
+}
+
+message UpdateUserReq {
+  int64 id = 1; //id
+  string title = 2; //title
+  string content = 3; //content
+}
+
+message UpdateUserResp {
+}
+
+message DeleteUserReq {
+  int64 id = 1; //id
+}
+
+message DeleteUserResp {
+  int64 id = 1; //id
+}
+
+message GetUserByIdReq {
+  int64 id = 1; //id
+}
+
+message GetUserByIdResp {
+  UserInfo userInfo = 1; //UserInfo
+}
+ 
+message GetAllUserReq {
+   
+}
+
+message GetAllUserResp {
+  UserInfo userInfo = 1; //UserInfo
+}
+ 
+// ------------------------------------ 
+// Rpc Func
+// ------------------------------------ 
+
+service user{ 
+  //-----------------------user----------------------- 
+  rpc CreateUser(CreateUserReq) returns (CreateUserResp); 
+  rpc UpdateUser(UpdateUserReq) returns (UpdateUserResp); 
+  rpc DeleteUser(DeleteUserReq) returns (DeleteUserResp); 
+  rpc GetUserById(GetUserByIdReq) returns (GetUserByIdResp); 
+  rpc GetAllUser(GetAllUserReq) returns (GetAllUserResp); 
+}

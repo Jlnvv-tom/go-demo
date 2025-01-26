@@ -1,0 +1,60 @@
+syntax = "v1"
+
+// 用户信息
+type UserInfo {
+	Id    string `json:"id"`
+	Name  string `json:"name"`
+	Phone string `json:"phone,omitempty"`
+}
+
+type (
+	/***************  创建用户 ****************/
+	//  用户接口的请求体
+	CreateUserReq {
+		Name  string `json:"name"`
+		Phone string `json:"phone,omitempty"`
+	}
+
+	// 用户接口的响应体
+	CreateUserResp {
+		Id   int64  `json:"id"`
+		Name string `json:"name"`
+	}
+
+	/**********  更新用户 ********************/
+	UpdateUserReq {
+		Id    string `json:"id"`
+		Name  string `json:"name"`
+		Phone string `json:"phone,omitempty"`
+	}
+
+	UpdateUserResp {
+		Id int64 `json:"id"`
+	}
+
+	/************** 删除用户 ***************/
+	DeleteUserReq {
+		Id string `json:"id"`
+	}
+
+	DeleteUserResp {
+		Id int64 `json:"id"`
+	}
+
+	/************** 根据id获取用户 ***************/
+	GetUserReq {
+		Id string `json:"id"`
+	}
+
+	GetUserResp {
+		Id int64 `json:"id"`
+	}
+
+	/************** 获取全部用户 ***************/
+	GetListUserReq {
+	}
+
+	GetListUserResp {
+		Data []UserInfo `json:"userInfo"`
+	}
+)

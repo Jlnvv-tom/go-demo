@@ -1,0 +1,38 @@
+syntax = "v1"
+
+info (
+	title:   "用户服务"
+	desc:    "用户服务"
+	version: "v1"
+)
+
+import (
+	"userParam.api"
+)
+
+@server (
+	group: user
+// middleware: JWTValidateMiddleware
+)
+service user {
+	@doc "创建用户"
+	@handler createUser
+	post /user/create (CreateUserReq) returns (CreateUserResp)
+
+	@doc "更新用户"
+	@handler updateUser
+	post /user/update (UpdateUserReq) returns (UpdateUserResp)
+
+	@doc "删除用户"
+	@handler deleteUser
+	post /user/delete (DeleteUserReq) returns (DeleteUserResp)
+
+	@doc "根据id 获取用户"
+	@handler getUserById
+	get /user/:id (GetUserReq) returns (GetUserResp)
+
+	@doc "根据所有用户"
+	@handler getAllUser
+	get /user/getAllUser (GetListUserReq) returns (GetListUserResp)
+}
+
