@@ -51,6 +51,13 @@ sql2pb -go_package ../user -host localhost -package user -password 123456 -port 
 2、 生成 rpc 目录结构代码
 
 ```javascript
-goctl rpc protoc user.proto --go_out=../../app/user/rpc --go-grpc_out=../../app/user/rpc --zrpc_out=../../app/user/rpc --style=goZero
+goctl rpc protoc user.proto --go_out=./ --go-grpc_out=./ --zrpc_out=../../app/user/rpc --style=goZero
+
+```
+
+### 按照依赖
+
+```javascript
+ go mod tidy
 
 ```

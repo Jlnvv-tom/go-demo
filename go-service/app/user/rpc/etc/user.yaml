@@ -1,6 +1,19 @@
-Name: user.rpc
-ListenOn: 0.0.0.0:8080
+Name: user.rpc #服务名称
+ListenOn: 127.0.0.1:8002 #监听地址
 Etcd:
   Hosts:
-  - 127.0.0.1:2379
+    - 127.0.0.1:2379
   Key: user.rpc
+Mode: dev #运行模式
+# 配置Redis
+Redis:
+  Host: 127.0.0.1:6379
+  Type: node
+  Pass:
+  Key: user-rpc
+# 配置MySQL
+DB:
+  DataSource: root:123456@tcp(127.0.0.1:3306)/gozero?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+Cache:
+  - Host: 127.0.0.1:6379
+    Pass:
