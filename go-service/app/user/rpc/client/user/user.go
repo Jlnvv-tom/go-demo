@@ -2,12 +2,12 @@
 // goctl 1.7.3
 // Source: user.proto
 
-package userClient
+package user
 
 import (
 	"context"
 
-	"user/D:/code/go-workspace/go-demo/go-service/proto/user"
+	"proto/user"
 
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"

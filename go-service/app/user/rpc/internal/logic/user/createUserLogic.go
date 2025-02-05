@@ -1,9 +1,9 @@
-package logic
+package userlogic
 
 import (
 	"context"
 
-	"user/D:/code/go-workspace/go-demo/go-service/proto/user"
+	"proto/user"
 	"user/rpc/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/logx"

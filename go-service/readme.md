@@ -1,6 +1,8 @@
 # go-zero 实操记录
 
-## 目录目录生成步骤
+## 使用 gen.sh 脚本执行
+
+## 目录生成步骤
 
 ### 生成 model
 
@@ -55,7 +57,7 @@ goctl rpc protoc user.proto --go_out=./ --go-grpc_out=./ --zrpc_out=../../app/us
 
 ```
 
-### 按照依赖
+### 安装依赖
 
 ```javascript
  go mod tidy

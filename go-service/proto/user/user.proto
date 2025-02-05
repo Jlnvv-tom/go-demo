@@ -61,7 +61,7 @@ message GetAllUserResp {
 // Rpc Func
 // ------------------------------------ 
 
-service user{ 
+service user { 
   //-----------------------user----------------------- 
   rpc CreateUser(CreateUserReq) returns (CreateUserResp); 
   rpc UpdateUser(UpdateUserReq) returns (UpdateUserResp); 

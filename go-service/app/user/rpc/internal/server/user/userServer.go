@@ -7,8 +7,8 @@ package server
 import (
 	"context"
 
-	"user/D:/code/go-workspace/go-demo/go-service/proto/user"
-	"user/rpc/internal/logic"
+	"proto/user"
+	"user/rpc/internal/logic/user"
 	"user/rpc/internal/svc"
 )
 
@@ -25,26 +25,26 @@ func NewUserServer(svcCtx *svc.ServiceContext) *UserServer {
 
 // -----------------------user-----------------------
 func (s *UserServer) CreateUser(ctx context.Context, in *user.CreateUserReq) (*user.CreateUserResp, error) {
-	l := logic.NewCreateUserLogic(ctx, s.svcCtx)
+	l := userlogic.NewCreateUserLogic(ctx, s.svcCtx)
 	return l.CreateUser(in)
 }
 
 func (s *UserServer) UpdateUser(ctx context.Context, in *user.UpdateUserReq) (*user.UpdateUserResp, error) {
-	l := logic.NewUpdateUserLogic(ctx, s.svcCtx)
+	l := userlogic.NewUpdateUserLogic(ctx, s.svcCtx)
 	return l.UpdateUser(in)
 }
 
 func (s *UserServer) DeleteUser(ctx context.Context, in *user.DeleteUserReq) (*user.DeleteUserResp, error) {
-	l := logic.NewDeleteUserLogic(ctx, s.svcCtx)
+	l := userlogic.NewDeleteUserLogic(ctx, s.svcCtx)
 	return l.DeleteUser(in)
 }
 
 func (s *UserServer) GetUserById(ctx context.Context, in *user.GetUserByIdReq) (*user.GetUserByIdResp, error) {
-	l := logic.NewGetUserByIdLogic(ctx, s.svcCtx)
+	l := userlogic.NewGetUserByIdLogic(ctx, s.svcCtx)
 	return l.GetUserById(in)
 }
 
 func (s *UserServer) GetAllUser(ctx context.Context, in *user.GetAllUserReq) (*user.GetAllUserResp, error) {
-	l := logic.NewGetAllUserLogic(ctx, s.svcCtx)
+	l := userlogic.NewGetAllUserLogic(ctx, s.svcCtx)
 	return l.GetAllUser(in)
 }
