@@ -1,6 +1,10 @@
 package model
 
-import "github.com/zeromicro/go-zero/core/stores/sqlx"
+import (
+	proto "proto/user"
+
+	"github.com/zeromicro/go-zero/core/stores/sqlx"
+)
 
 var _ UserModel = (*customUserModel)(nil)
 
@@ -26,4 +30,13 @@ func NewUserModel(conn sqlx.SqlConn) UserModel {
 
 func (m *customUserModel) withSession(session sqlx.Session) UserModel {
 	return NewUserModel(sqlx.NewSqlConnFromSession(session))
+}
+
+func (m *User) Marshal(p *proto.UserInfo) error {
+
+	m.Id = &p.Id
+	m.Name = &p.Name
+	m.Phone = &p.Phone
+
+	return nil
 }

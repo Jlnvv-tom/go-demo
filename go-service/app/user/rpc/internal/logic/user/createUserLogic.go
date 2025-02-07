@@ -3,7 +3,8 @@ package userlogic
 import (
 	"context"
 
-	"proto/user"
+	proto "proto/user"
+	"user/model"
 	"user/rpc/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/logx"
@@ -24,8 +25,10 @@ func NewCreateUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Create
 }
 
 // -----------------------user-----------------------
-func (l *CreateUserLogic) CreateUser(in *user.CreateUserReq) (*user.CreateUserResp, error) {
+func (l *CreateUserLogic) CreateUser(in *proto.CreateUserReq) (*proto.CreateUserResp, error) {
 	// todo: add your logic here and delete this line
+	user := model.User{}
+	_ = user.Marshal(in)
 
-	return &user.CreateUserResp{}, nil
+	return &proto.CreateUserResp{}, nil
 }

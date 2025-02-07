@@ -2,12 +2,11 @@ module user
 
 go 1.22.5
 
-// comm => ../../comm
-replace proto => ../../proto
 
 require (
 	github.com/zeromicro/go-zero v1.8.0
 	google.golang.org/grpc v1.70.0
+  proto v0.0.0
 )
 
 require (
@@ -92,4 +91,10 @@ require (
 	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
+)
+
+replace (
+	// comm => ../../comm
+	proto => ../../proto
+
 )

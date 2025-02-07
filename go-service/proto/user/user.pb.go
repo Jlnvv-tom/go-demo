@@ -31,7 +31,7 @@ type UserInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id    int32  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id    int64  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name  string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Phone string `protobuf:"bytes,3,opt,name=phone,proto3" json:"phone,omitempty"`
 }
@@ -68,7 +68,7 @@ func (*UserInfo) Descriptor() ([]byte, []int) {
 	return file_proto_user_user_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *UserInfo) GetId() int32 {
+func (x *UserInfo) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
@@ -149,7 +149,7 @@ type CreateUserResp struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *CreateUserResp) Reset() {
@@ -184,7 +184,7 @@ func (*CreateUserResp) Descriptor() ([]byte, []int) {
 	return file_proto_user_user_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *CreateUserResp) GetId() int32 {
+func (x *CreateUserResp) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
@@ -650,7 +650,7 @@ var file_proto_user_user_proto_goTypes = []interface{}{
 	(*GetAllUserReq)(nil),   // 9: user.GetAllUserReq
 	(*GetAllUserResp)(nil),  // 10: user.GetAllUserResp
 }
-var file_proto_user_user_proto_depIdxs = []int32{
+var file_proto_user_user_proto_depIdxs = []int64{
 	0,  // 0: user.GetUserByIdResp.userInfo:type_name -> user.UserInfo
 	0,  // 1: user.GetAllUserResp.userInfo:type_name -> user.UserInfo
 	1,  // 2: user.user.CreateUser:input_type -> user.CreateUserReq

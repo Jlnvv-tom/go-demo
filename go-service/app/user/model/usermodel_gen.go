@@ -37,9 +37,9 @@ type (
 	}
 
 	User struct {
-		Id    int64          `db:"id"`
-		Name  sql.NullString `db:"name"`  // The username
-		Phone string         `db:"phone"` // The mobile phone number
+		Id    *int64          `db:"id"`
+		Name  *string         `db:"name"`  // The username
+		Phone *string         `db:"phone"` // The mobile phone number
 	}
 )
 
