@@ -27,7 +27,7 @@ message CreateUserResp {
 message UpdateUserReq {
   int64 id = 1; //id
   string name = 2; //name
-  string content = 3; //content
+  string phone = 3; //phone
 }
 
 message UpdateUserResp {

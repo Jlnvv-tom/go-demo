@@ -34,7 +34,7 @@ func (m *customUserModel) withSession(session sqlx.Session) UserModel {
 
 func (m *User) Marshal(p *proto.UserInfo) error {
 
-	m.Id = &p.Id
+	// m.Id = &p.Id
 	m.Name = &p.Name
 	m.Phone = &p.Phone
 
